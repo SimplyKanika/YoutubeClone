@@ -1,21 +1,23 @@
-import React from 'react'
-import './LeftSidebar.css'
+import React from "react";
+import "./LeftSidebar.css";
 
-import { AiFillPlaySquare, AiOutlineHome, AiFillLike  } from "react-icons/ai"
-import {  MdOutlineExplore,
+import { AiFillPlaySquare, AiOutlineHome, AiFillLike } from "react-icons/ai";
+import {
+  MdOutlineExplore,
   MdOutlineVideoLibrary,
   MdOutlineWatchLater,
-  MdSubscriptions,} from "react-icons/md"
-import { FaHistory } from 'react-icons/fa'
-import {NavLink}from "react-router-dom"
+  MdSubscriptions,
+} from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
 
-import shorts from './shorts.png'
+import shorts from "./shorts.png";
+import { NavLink } from "react-router-dom";
 
-function DrawerSidebar(toggleDrawer, toggleDrawerSidebar) {
+function DrawerSidebar({ toggleDrawer,toggleDrawerSidebar }) {
   return (
-  <div className='container_DrawerLeftSidebar'>
-    <div className='container2_DrawerLeftSidebar'>
-    <div className="Drawer_leftsidebar">
+    <div className="container_DrawaerLeftSidebar" style={toggleDrawerSidebar}>
+      <div className="container2_DrawaerLeftSidebar">
+        <div className="Drawer_leftsidebar">
           <NavLink to={'/'} className="icon_sidebar_div">
             <p>
               <AiOutlineHome
@@ -79,7 +81,7 @@ function DrawerSidebar(toggleDrawer, toggleDrawerSidebar) {
               <div className="text_sidebar_icon">History</div>
             </p>
           </NavLink>
-          <NavLink to={'/YourVideos'} className="icon_sidebar_div">
+          <NavLink to={'/YourVideo'} className="icon_sidebar_div">
             <p>
               <AiFillPlaySquare
                 size={22}
@@ -131,12 +133,11 @@ function DrawerSidebar(toggleDrawer, toggleDrawerSidebar) {
         </div>
       </div>
       <div
-        className="container3_DrawerLeftSidebar"
+        className="container3_DrawaerLeftSidebar"
         onClick={() => toggleDrawer()}
       ></div>
     </div>
   );
 }
 
-
-export default DrawerSidebar
+export default DrawerSidebar;

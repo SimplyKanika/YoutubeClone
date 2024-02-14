@@ -2,14 +2,14 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
 import './ShowVideo.css'
-function ShowVideo(vid) {
+function ShowVideo({vid}) {
   console.log(vid)
   return (
     <>
      <Link to={`/videopage/${vid?._id}`}>
         <video 
-        // src={`http://localhost:5500/${vid.filePath}`}
-        src={`https://youtubeclone5031.herokuapp.com/${vid.filePath}`}
+         src={`http://localhost:5500/${vid.filePath}`}
+        //src={`https://youtubeclone5031.herokuapp.com/${vid.filePath}`}
         className="video_ShowVideo"
         />
      </Link>

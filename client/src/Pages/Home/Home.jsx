@@ -4,10 +4,10 @@ import LeftSidebar from '../../Component/LeftSidebar/LeftSidebar'
 import ShowVideoGrid from '../../Component/ShowVideoGrid/ShowVideoGrid'
 
 import './Home.css'
-//import vid from '../../Component/Video/vid.mp4'
+import vid from "../../Component/Video/vid.mp4"
 function Home() {
-  const vids=useSelector(state=>state.videoReducer)?.data?.filter(q=>q).reverse();
-  // console.log(videosFile)
+   const vids=useSelector(state=>state.videoReducer)?.data?.filter(q=>q).reverse();
+  //console.log(videosFile)
   // const vids = [
   //   {
   //     _id: 1,

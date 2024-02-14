@@ -5,7 +5,7 @@ import LeftSidebar from "../LeftSidebar/LeftSidebar";
 
 import "./WHLcss.css"
 import WHLVideoList from './WHLVideoList';
-function WHL(page, videoList) {
+function WHL({page, videoList}) {
     const CurrentUser = useSelector((state) => state?.currentUserReducer);
 const dispatch=useDispatch()
   const handleClearHistory=()=>{

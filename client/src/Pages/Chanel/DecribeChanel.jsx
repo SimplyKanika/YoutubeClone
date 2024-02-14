@@ -3,7 +3,7 @@ import { FaEdit, FaUpload } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import "./DescribeChanel.css";
 function DecribeChanel({ setEditCreateChanelBtn, Cid,setVidUploadPage }) {
-    const chanels = useSelector((state) => state?.chanelReducers);
+  const chanels = useSelector((state) => state?.chanelReducers);
 
   // console.log(Cid)
   const currentChanel = chanels.filter((c) => c._id === Cid)[0];

@@ -1,7 +1,7 @@
 import React from 'react'
 import ShowVideo from '../ShowVideo/ShowVideo'
 import './ShowVideoGrid.css'
-function ShowVideoGrid(vids) {
+function ShowVideoGrid({vids}) {
   return (
     <div className='Container_ShowVideoGrid'>
     {

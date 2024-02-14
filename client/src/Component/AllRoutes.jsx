@@ -9,7 +9,7 @@ import LikedVideo from '../Pages/LikedVideo/LikedVideo'
 import VideoPage from "../Pages/VideoPage/VideoPage"
 import Chanel from "../Pages/Chanel/Chanel"
 import Search from "../Pages/Search/Search"
-function AllRoutes() {
+function AllRoutes({ setEditCreateChanelBtn,setVidUploadPage }) {
   return (
     <Routes>
         <Route path="/" element={<Home />} />
