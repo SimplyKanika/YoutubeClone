@@ -20,7 +20,7 @@ app.use('/uploads',express.static(path.join('uploads')))
 
 
 app.get('/',(req,res)=>{
-    res.send("hello")
+    res.send("Server is working.")
 })
 app.use(bodyParser.json())
 
