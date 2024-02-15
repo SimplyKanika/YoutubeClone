@@ -1,6 +1,6 @@
 import express from "express"
 import mongoose from "mongoose"
-import dontenv from "dotenv"
+import dotenv from "dotenv"
 import cors from 'cors'
 import bodyParser from "body-parser"
 import userRoutes from './routes/user.js'
@@ -9,7 +9,7 @@ import commentsRoutes from './routes/comments.js'
 
 import path from 'path'
 
-dontenv.config()
+dotenv.config()
 
 
 const app=express()
