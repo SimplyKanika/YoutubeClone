@@ -9,6 +9,7 @@ import LikedVideo from '../Pages/LikedVideo/LikedVideo'
 import VideoPage from "../Pages/VideoPage/VideoPage"
 import Chanel from "../Pages/Chanel/Chanel"
 import Search from "../Pages/Search/Search"
+// import Login from "../Component/Navbar/Login/Login"
 function AllRoutes({ setEditCreateChanelBtn,setVidUploadPage }) {
   return (
     <Routes>
@@ -25,6 +26,7 @@ function AllRoutes({ setEditCreateChanelBtn,setVidUploadPage }) {
      element={<Chanel setVidUploadPage={setVidUploadPage} 
     setEditCreateChanelBtn={setEditCreateChanelBtn}/>}
      />
+      {/* <Route path='/login' element={<Login />} /> */}
     </Routes>
   );
 }
