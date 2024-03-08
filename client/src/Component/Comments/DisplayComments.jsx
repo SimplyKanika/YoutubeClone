@@ -10,6 +10,7 @@ function DisplayComments({
     userId,
     commentOn,
     userCommented,
+    userLocation,
   }) {
     const [Edit, setEdit] = useState(false);
     const [cmtBdy, setcmtBdy] = useState("");
@@ -52,7 +53,7 @@ function DisplayComments({
           <input
             type="text"
             onChange={(e) => setcmtBdy(e.target.value)}
-            placeholder="Edit comment..."
+            placeholder="Edit comment here"
             value={cmtBdy}
             className="comment_ibox"
           />
@@ -64,7 +65,15 @@ function DisplayComments({
         </form>
       </>
     ) : (
-      <p className="comment_body">{commentBody}</p>
+      <>
+          <p className="comment_body">{commentBody}</p>
+
+          {userLocation && (
+            <p className="user_location">
+              Location: {userLocation.latitude}, {userLocation.longitude}
+            </p>
+          )}
+        </>
     )}
     <p className="usercommented">
       {" "}

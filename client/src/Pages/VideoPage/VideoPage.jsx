@@ -60,7 +60,10 @@ function VideoPage() {
               <div className="views_date_btns_VideoPage">
                 <div className="views_videoPage">
                   {vv?.Views} views <div className="dot"></div>{" "}
-                  {moment(vv?.createdAt).fromNow()}
+                  {
+                  moment(vv?.createdAt).fromNow()
+                  // moment(vv?.createdAt).format('MMMM Do YYYY, h:mm:ss a')
+                }
                 </div>
                 <LikeWatchLaterSaveBtns vv={vv} vid={vid} />
               </div>
@@ -76,7 +79,7 @@ function VideoPage() {
             </Link>
             <div className="comments_VideoPage">
               <h2>
-                <u>Coments</u>
+                <u>Comments</u>
               </h2>
               <Comments  videoId={vv._id}/>
             </div>

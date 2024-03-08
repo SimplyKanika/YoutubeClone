@@ -24,11 +24,23 @@ function Comments({videoId}) {
     // ];
   
     const dispatch = useDispatch();
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
       e.preventDefault();
+
+      try {
+
+        const position = await new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+    
+        const userLocation = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
+
       if (CurrentUser) {
         if (!commentText) {
-          alert("Plz Type your comment ! ");
+          alert("Please Type your comment ! ");
         } else {
           dispatch(
             postComment({
@@ -36,21 +48,30 @@ function Comments({videoId}) {
               userId: CurrentUser?.result._id,
               commentBody: commentText,
               userCommented: CurrentUser?.result.name,
+              userLocation: userLocation
             })
           );
           setCommentText("");
         }
       }else{
-        alert("Plz login to post your commnet !")
+        alert("Please login to post your comment !")
       }
+
+      }catch (error) {
+        console.error('Error getting users location:', error);
+       
+        }
     };
+
+
+
   return (
     <>
     <form className="comments_sub_form_comments" onSubmit={handleOnSubmit}>
       <input
         type="text"
         onChange={(e) => setCommentText(e.target.value)}
-        placeholder="add comment..."
+        placeholder="add comment here"
         value={commentText}
         className="comment_ibox"
       />
@@ -68,6 +89,7 @@ function Comments({videoId}) {
               commentBody={m.commentBody}
               commentOn={m.commentOn}
               userCommented={m.userCommented}
+              userLocation={m.userLocation}
             />
           );
         })}

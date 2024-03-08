@@ -5,6 +5,12 @@ const commentSchema= mongoose.Schema({
     userId:String,
     commentBody:String,
     userCommented:String,
-    CommentOn:{type:Date,default:Date.now}
-})
+    CommentOn:{type:Date,default:Date.now},
+    userLocation: {
+        type: {
+          latitude: Number,
+          longitude: Number,
+        },
+      }
+});
 export default mongoose.model("Comments",commentSchema)
