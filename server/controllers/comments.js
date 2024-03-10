@@ -1,4 +1,4 @@
-import comment from "../models/comments";
+import comment from "../models/comments.js";
 
 import mongoose from "mongoose";
 
