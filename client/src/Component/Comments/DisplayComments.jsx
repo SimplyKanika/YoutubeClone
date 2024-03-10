@@ -12,6 +12,7 @@ function DisplayComments({
     userCommented,
     userLocation,
   }) {
+    
     const [Edit, setEdit] = useState(false);
     const [cmtBdy, setcmtBdy] = useState("");
     const [cmtId, setcmtId] = useState("");
@@ -67,14 +68,14 @@ function DisplayComments({
     ) : (
       <>
           <p className="comment_body">{commentBody}</p>
-
-          {userLocation && (
+          {userLocation && ( 
             <p className="user_location">
-              Location: {userLocation.latitude}, {userLocation.longitude}
+              Latitude: {userLocation.latitude}, Longitude: {userLocation.longitude}
             </p>
           )}
         </>
-    )}
+      )}
+
     <p className="usercommented">
       {" "}
       - {userCommented} commented {moment(commentOn).fromNow()}

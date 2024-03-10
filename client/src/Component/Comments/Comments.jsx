@@ -26,9 +26,11 @@ function Comments({videoId}) {
     const dispatch = useDispatch();
     const handleOnSubmit = async (e) => {
       e.preventDefault();
+      console.log('Handling submit...');
+      console.log('CurrentUser:', CurrentUser);
+      console.log('commentText:', commentText);
 
       try {
-
         const position = await new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject);
         });
@@ -37,32 +39,39 @@ function Comments({videoId}) {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         };
+        console.log('User Location:', userLocation);
 
       if (CurrentUser) {
         if (!commentText) {
           alert("Please Type your comment ! ");
         } else {
+            try{
+          console.log('Dispatching comment...');
           dispatch(
             postComment({
               videoId: videoId,
               userId: CurrentUser?.result._id,
               commentBody: commentText,
               userCommented: CurrentUser?.result.name,
-              userLocation: userLocation
+              userLocation: {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+              },
             })
           );
           setCommentText("");
+        } catch (error) {
+          console.error('Error dispatching comment:', error);
+        }
         }
       }else{
         alert("Please login to post your comment !")
       }
-
-      }catch (error) {
-        console.error('Error getting users location:', error);
-       
-        }
-    };
-
+    } catch (error) {
+      console.error('Error getting user location:', error);
+     
+    }
+  };
 
 
   return (
@@ -84,6 +93,7 @@ function Comments({videoId}) {
         .map((m) => {
           return (
             <DisplayComments
+              key={m._id}
               cId={m._id}
               userId={m.userId}
               commentBody={m.commentBody}
