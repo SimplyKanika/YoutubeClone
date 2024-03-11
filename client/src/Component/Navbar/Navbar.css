@@ -67,32 +67,15 @@
     border-radius: 0.1rem;
 }
 
-/* .login{ */
-    /* font-size: 19px;
-    text-transform: capitalize;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    justify-content: center;
-    border-color: aliceblue;
-    border: 2px solid;
-    margin: 0  ;
-    padding: 0.5rem;
-    border-radius: 0.1rem; */
-    /* display: flex; */
-    /* ikdun khalchs css */
-    /* font-size: 19px;
-    width: fit-content;
-    position: relative;
-
+.login{ 
     cursor: pointer;
     color: #3ea6ff;
     background-color: rgb(36,36,36);
-    border: 2px solid;
-    margin: 0.5 rem;
+    border: 1px solid;
+    margin: 0;
     padding: 0.3rem;
-    margin-right: 10 px;
     border-radius: 0.1rem;
-    margin-top: auto;
+    font-size: 14px;
+    font-weight: bold;
   
-} */
+} 

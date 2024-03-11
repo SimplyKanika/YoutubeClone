@@ -27,7 +27,7 @@ function Comments({videoId}) {
     const handleOnSubmit = async (e) => {
       e.preventDefault();
       console.log('Handling submit...');
-      console.log('CurrentUser:', CurrentUser);
+      // console.log('CurrentUser:', CurrentUser);
       console.log('commentText:', commentText);
 
       try {
@@ -39,13 +39,14 @@ function Comments({videoId}) {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         };
+
         console.log('User Location:', userLocation);
 
       if (CurrentUser) {
         if (!commentText) {
           alert("Please Type your comment ! ");
-        } else {
-            try{
+        } 
+        else {
           console.log('Dispatching comment...');
           dispatch(
             postComment({
@@ -60,11 +61,10 @@ function Comments({videoId}) {
             })
           );
           setCommentText("");
-        } catch (error) {
-          console.error('Error dispatching comment:', error);
-        }
-        }
-      }else{
+        } 
+        
+      }
+      else{
         alert("Please login to post your comment !")
       }
     } catch (error) {

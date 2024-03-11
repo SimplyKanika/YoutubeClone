@@ -5,14 +5,18 @@ import mongoose from "mongoose";
 
 export const postComment = async (req, res) => {
   const commentData = req.body;
-  console.log('Comment Data:', commentData);
+
   const postcomment = new comment(commentData);
   try {
+    
     await postcomment.save();
-    console.log('Comment saved:', postcomment);
+    // console.log('Comment saved:', postcomment);
+
     res.status(200).json("posted the comment");
-  } catch (error) {
+  } 
+  catch (error) {
     console.error('Error saving comment:', error);
+
     res.status(400).json(error);
   }
 };

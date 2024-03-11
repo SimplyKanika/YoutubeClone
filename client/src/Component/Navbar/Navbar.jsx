@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/auth";
-// import Login from "./Login/Login"
+import Login from "./Login/Login"
 import Auth from "../../Pages/Auth/Auth"
 function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
   
@@ -79,6 +79,15 @@ function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
         <p className="appBox"></p>
       </div>
       <IoMdNotificationsOutline size={22} className="vid_bell_Navbar" />
+
+      <ul>
+        <li>
+        <Link to="/Login" className="login">
+          Login
+        </Link>
+       </li>
+      </ul>
+
       <div className="Auth_cont_Navbar">
         {CurrentUser ? (
           <>
@@ -126,16 +135,6 @@ function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
 
 
 
-      // <li>
-      //   <Link to="/Login" className="login">
-      //   Login
-      //   </Link>
-      // </li> 
-      
-//     </div>
     
-//     </>
-//   );
-// }
 
 export default Navbar

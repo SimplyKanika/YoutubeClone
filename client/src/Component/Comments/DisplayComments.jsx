@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteComment, editComment } from "../../actions/comments";
 
 import "./comments.css";
+
+
 function DisplayComments({
     cId,
     commentBody,
@@ -68,6 +70,7 @@ function DisplayComments({
     ) : (
       <>
           <p className="comment_body">{commentBody}</p>
+          
           {userLocation && ( 
             <p className="user_location">
               Latitude: {userLocation.latitude}, Longitude: {userLocation.longitude}
