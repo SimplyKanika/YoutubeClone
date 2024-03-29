@@ -13,6 +13,8 @@ import { getAllVideo } from "./actions/video";
 import { getAlllikedVideo } from "./actions/likedVideo";
 import { getAllwatchLater } from "./actions/watchLater";
 import { getAllHistory } from "./actions/History";
+// import firebase from './Component/firebase.js';
+// import Login from "./Component/Navbar/Login/Login";
 function App() {
   const dispatch = useDispatch();
   
@@ -40,6 +42,7 @@ function App() {
   };
   const [vidUploadPage, setVidUploadPage] = useState(false);
   const [EditCreateChanelBtn, setEditCreateChanelBtn] = useState(false);
+
   return (
     <Router>
       {vidUploadPage && <VideoUpload  setVidUploadPage={setVidUploadPage}/>}
@@ -57,6 +60,9 @@ function App() {
       />
 
       <AllRoutes setVidUploadPage={setVidUploadPage} setEditCreateChanelBtn={setEditCreateChanelBtn} />
+
+      {/* <Login /> */}
+     
     </Router>
   );
 }
